@@ -30,7 +30,7 @@ jobs:
         pathTarget: ./target/wix
     - name: Add Wix to Path
       run: echo "$HOME/target/wix" >> $GITHUB_PATH
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Download JFX jmod files
       uses: suisei-cn/actions-download-file@v1
       id: jfxjmods
@@ -41,7 +41,7 @@ jobs:
       uses: DuckSoft/extract-7z-action@v1.0
       with:
         pathSource: ${{ steps.jfxjmods.outputs.filename }}
-        pathTarget: ./demo/javafx
+        pathTarget: ./javafx
     - name: Normalize jmod folder
       run: Rename-Item -path "demo\javafx\javafx-jmods-${{ env.VERSION_JFX }}" -newName "win"
     - name: Set up JDK
@@ -60,4 +60,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: graph-editor-demo.msi
-        path: ./demo/target/*.msi
+        path: ./target/*.msi

@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Download JFX JMod Files
       uses: suisei-cn/actions-download-file@v1
       id: jfxjmods
@@ -27,9 +27,9 @@ jobs:
       uses: DuckSoft/extract-7z-action@v1.0
       with:
         pathSource: ${{ steps.jfxjmods.outputs.filename }}
-        pathTarget: ./demo/javafx
+        pathTarget: ./javafx
     - name: Normalize jmod folder
-      run: mv ./demo/javafx/javafx-jmods-${{ env.VERSION_JFX }} ./demo/javafx/linux
+      run: mv ./javafx/javafx-jmods-${{ env.VERSION_JFX }} ./javafx/linux
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
@@ -46,4 +46,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: graph-editor-demo.deb
-        path: ./demo/target/*.deb
+        path: ./target/*.deb
