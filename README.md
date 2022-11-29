@@ -3,7 +3,10 @@ Graph Editor Demo
 
 A sample application created to show basic usage of the **[graph-editor API](https://github.com/eckig/graph-editor)**.
 
-Download self-executable installer from the [releases](https://github.com/eckig/graph-editor-demo/releases).
+Download self-executable installer from the latest actions:
+[![Build Windows Installer](https://github.com/eckig/graph-editor-demo/actions/workflows/maven-build-installer-windows.yml/badge.svg)](https://github.com/eckig/graph-editor-demo/actions/workflows/maven-build-installer-windows.yml)
+[![Build macOS Installer](https://github.com/eckig/graph-editor-demo/actions/workflows/maven-build-installer-macos.yml/badge.svg)](https://github.com/eckig/graph-editor-demo/actions/workflows/maven-build-installer-macos.yml)
+[![Build Unix Installer](https://github.com/eckig/graph-editor-demo/actions/workflows/maven-build-installer-unix.yml/badge.svg)](https://github.com/eckig/graph-editor-demo/actions/workflows/maven-build-installer-unix.yml)
 
 Or compile and run it yourself:
 

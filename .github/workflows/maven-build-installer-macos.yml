@@ -5,8 +5,8 @@ name: Build macOS Installer
 
 on:
   workflow_dispatch:
-  release:
-    types: [created]
+  schedule:
+    - cron: "20 3 * * 0"
 
 env:
   VERSION_JFX: 19

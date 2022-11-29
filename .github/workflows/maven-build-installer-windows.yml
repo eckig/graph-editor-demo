@@ -5,8 +5,8 @@ name: Build Windows Installer
 
 on:
   workflow_dispatch:
-  release:
-    types: [created]
+  schedule:
+    - cron: "20 3 * * 0"
 
 env:
   VERSION_JFX: 19
@@ -32,7 +32,7 @@ jobs:
       run: echo "$HOME/target/wix" >> $GITHUB_PATH
     - uses: actions/checkout@v3
     - name: Download JFX jmod files
-      uses: suisei-cn/actions-download-file@v1
+      uses: suisei-cn/actions-download-file@v1.3.0
       id: jfxjmods
       with:
         url: https://download2.gluonhq.com/openjfx/${{ env.VERSION_JFX }}/openjfx-${{ env.VERSION_JFX }}_windows-x64_bin-jmods.zip
