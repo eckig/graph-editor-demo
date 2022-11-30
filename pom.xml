@@ -5,22 +5,17 @@
     <groupId>io.github.eckig.grapheditor</groupId>
     <artifactId>grapheditor-demo</artifactId>
     <packaging>jar</packaging>
-    <parent>
-        <groupId>io.github.eckig</groupId>
-        <artifactId>grapheditor</artifactId>
-        <version>19.0.0</version>
-    </parent>
-    <name>${component.name}::Demo</name>
+    <name>Graph-Editor Demo</name>
+    <version>1.0.0</version>
 
     <properties>
         <main-class>io.github.eckig.grapheditor.demo.GraphEditorDemo</main-class>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <app.name>${project.artifactId}</app.name>
         <app.version>${project.version}</app.version>
 
         <!-- This property is used to specify the modules included in the (custom) JVM image. -->
         <jvm.modules>javafx.controls,javafx.fxml</jvm.modules>
-
-        <maven.compiler.release>17</maven.compiler.release>
 
         <!-- This ID is used by the Windows installer system to know that an installer is intended to
         replace/upgrade an earlier version. -->
@@ -57,6 +52,14 @@
             </resource>
         </resources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <release>17</release>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
