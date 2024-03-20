@@ -9,7 +9,7 @@ on:
     - cron: "20 3 * * 0"
 
 env:
-  VERSION_JFX: 20
+  VERSION_JFX: 22
 
 jobs:
   build:
